@@ -1,7 +1,7 @@
 /* Color customization */
 :root {
-  --primary: #f9c412;
-  --primary-dark: #E7BF60;
+  --primary: #5DFDCB;
+  --primary-dark: #02DE99;
 }
 
 .test-dead-code-elimination-sentinel {
@@ -14,9 +14,21 @@
   the viewport.
   Context
   - https://web.dev/content-visibility/#skipping-rendering-work-with-content-visibility
+
+  DISABLED FOR NOW - causes weird issue with header
  */
 main img {
-  content-visibility: auto;
+  /* content-visibility: auto; */
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body main {
+    flex-grow: 1;
 }
 
 /*! purgecss start ignore */
@@ -388,7 +400,7 @@ BUGS:
   src: url("/fonts/Inter-italic.var.woff2") format("woff2");
 }
 
-/* 
+/*
 
 The Bahunya CSS framework https://kimeiga.github.io/bahunya/
 

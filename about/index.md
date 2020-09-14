@@ -7,6 +7,21 @@ eleventyNavigation:
   order: 3
 ---
 
-I am a person that writes stuff.
+Hi, I'm a full-stack engineer working at Shamaazi.
 
-This blog template is based on [eleventy-high-performance-blog](https://www.industrialempathy.com/posts/eleventy-high-performance-blog/) which itself is based on [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog).
+I'm responsible for a range of charity products that serve over 100,000 people, such as:
+- https://mytennights.com
+- https://givematch.com
+- https://zakchat.com
+- https://mytendays.com
+
+I've been working in technology and programming since 2013.
+BEng in Computer Science from the University of York, UK.
+
+Currently I work every day using:
+- [React](https://reactjs.org/)
+- [Terraform](https://www.terraform.io/)
+- [Go](https://golang.org/)
+- [Github](https://github.com/)
+- [AWS](https://aws.amazon.com/)
+

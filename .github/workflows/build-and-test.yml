@@ -1,5 +1,5 @@
 # Runs build and test
-name: CI
+name: Build and Test
 
 on:
   push:
@@ -16,3 +16,13 @@ jobs:
         node-version: '12'
     - run: npm install
     - run: npm run build
+      https://github.com/ad-m/github-push-action
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -f _site -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}

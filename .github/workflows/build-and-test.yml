@@ -16,13 +16,15 @@ jobs:
         node-version: '12'
     - run: npm install
     - run: npm run build
-      https://github.com/ad-m/github-push-action
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -f _site -m "Add changes"
+        git add -f _site
+        git commit -m "Add site files"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: live
+        force: true

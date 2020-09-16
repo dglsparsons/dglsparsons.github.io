@@ -46,6 +46,7 @@ const CSP = {
     ["style-src", quote("unsafe-inline")],
     // Images may also come from data-URIs.
     ["img-src", SELF, "data:"],
+    ["connect-src", SELF, 'http://www.google-analytics.com'],
   ]),
 };
 

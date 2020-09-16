@@ -13,10 +13,6 @@
     "test": "mocha test/test*.js",
     "test-watch": "mocha test/test*.js --watch"
   },
-  "pre-push": [
-    "build"
-  ],
-  "pre-commit": [],
   "repository": {
     "type": "git",
     "url": "git://github.com/11ty/eleventy-base-blog.git"
@@ -38,8 +34,6 @@
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.2.5",
     "node-fetch": "^2.6.1",
-    "pre-commit": "^1.2.2",
-    "pre-push": "^0.1.1",
     "rollup-plugin-terser": "^6.1.0",
     "shorthash": "0.0.2"
   },

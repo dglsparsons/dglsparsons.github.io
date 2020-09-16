@@ -1,19 +1,20 @@
 ---
 title: Douglas Parsons
 layout: layouts/home.njk
-description: Articles and thoughts
+description: |
+    I'm a developer working at Shamaazi on products that help over 100,000 people give to charity. Keep up to date with my thoughts and opinions on my blog!
 image: https://upload.wikimedia.org/wikipedia/en/a/a9/Example.jpg
 date: Last Modified
 ---
 
 <p>
   Hi, I'm a developer looking to get into blogging currently working at Shamaazi. I'm part of a (currently) two-man engineering team
-  responsible for products that serve over 100,000 people! I've been working in technology since 2013.
-  Opinions are my own.
+  responsible for products that help over 100,000 people give to charity! You can keep up to date with my thoughts and
+  opinions on my blog! Opinions are all my own.
 </p>
 
-<div id="articles">
-  <h2>Articles</h2>
+<div id="posts">
+  <h2>Posts</h2>
   {% set postslist = collections.posts %}
   {% include "postslist.njk" %}
 </div>

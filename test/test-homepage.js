@@ -38,10 +38,10 @@ describe("check build output for homepage", () => {
       expect(navs.length).to.be.greaterThan(1);
     });
 
-    it("should have a list of articles", () => {
-      const articles = Array.from(doc.querySelectorAll("#articles ul li a"));
+    it("should have a list of posts", () => {
+      const posts = Array.from(doc.querySelectorAll("#posts ul li a"));
 
-      expect(articles.length).to.be.greaterThan(0);
+      expect(posts.length).to.be.greaterThan(0);
     });
   });
 });

@@ -19,6 +19,14 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-177820617-1', 'auto');
+ga('send', 'pageview');
+
 const exposed = {};
 if (location.search) {
   var a = document.createElement("a");
@@ -83,77 +91,6 @@ document.documentElement.addEventListener("touchstart", prefetch, {
   capture: true,
   passive: true,
 });
-
-const GA_ID = document.documentElement.getAttribute("ga-id");
-window.ga =
-  window.ga ||
-  function () {
-    if (!GA_ID) {
-      return;
-    }
-    (ga.q = ga.q || []).push(arguments);
-  };
-ga.l = +new Date();
-ga("create", GA_ID, "auto");
-ga("set", "transport", "beacon");
-var timeout = setTimeout(
-  (onload = function () {
-    clearTimeout(timeout);
-    ga("send", "pageview");
-  }),
-  1000
-);
-
-var ref = +new Date();
-function ping(event) {
-  var now = +new Date();
-  if (now - ref < 1000) {
-    return;
-  }
-  ga("send", {
-    hitType: "event",
-    eventCategory: "page",
-    eventAction: event.type,
-    eventLabel: Math.round((now - ref) / 1000),
-  });
-  ref = now;
-}
-addEventListener("pagehide", ping);
-addEventListener("visibilitychange", ping);
-addEventListener(
-  "click",
-  function (e) {
-    var button = e.target.closest("button");
-    if (!button) {
-      return;
-    }
-    ga("send", {
-      hitType: "event",
-      eventCategory: "button",
-      eventAction: button.getAttribute("aria-label") || button.textContent,
-    });
-  },
-  true
-);
-var selectionTimeout;
-addEventListener(
-  "selectionchange",
-  function () {
-    clearTimeout(selectionTimeout);
-    var text = String(document.getSelection()).trim();
-    if (text.split(/[\s\n\r]+/).length < 3) {
-      return;
-    }
-    selectionTimeout = setTimeout(function () {
-      ga("send", {
-        hitType: "event",
-        eventCategory: "selection",
-        eventAction: text,
-      });
-    }, 2000);
-  },
-  true
-);
 
 if (window.ResizeObserver && document.querySelector("header nav #nav")) {
   var progress = document.getElementById("reading-progress");

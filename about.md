@@ -2,12 +2,15 @@
 layout: layouts/base.njk
 title: About
 templateClass: tmpl-post
+image: /img/me-and-cat.jpg
 eleventyNavigation:
   key: About
   order: 3
 ---
 
 Hi, I'm a full-stack engineer working at Shamaazi.
+
+<img alt="Me and my cat" decoding="async" loading="lazy" src="/img/me-and-cat.jpg" style="background-size: cover; background-image: none;">
 
 I'm responsible for a range of charity products that serve over 100,000 people, such as:
 - [My Ten Nights](https://mytennights.com)

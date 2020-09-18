@@ -69,12 +69,12 @@ In areas of code that are rapidly and constantly changing in structure, higher l
 maintainability and stability, as the higher-level workings of a system are typically more stable.
 These tests are significantly less likely to be made completely redundant.
 
+![Titanic Sinking](/img/remote/titanic-tests.png)
+
 This, however, poses an interesting conundrum: how do we know when code
 is likely to change in structure or approach in the future? If we could identify these areas ahead of time, then our
 newfound prescience could simply mean we write them in a better form the first time around. Sadly, however, we are left fumbling in the
 dark: attempts at organising code are a 'best efforts' approach given a current state of knowledge.
-
-![Thinking](/img/remote/thinking.webp)
 
 We do, however,
 get an increased understanding of a system the longer it exists, or the longer we work on it. This allows informed

@@ -64,6 +64,7 @@ software. To emphasise this point, I ask 'have you ever refactored a section of 
 tests are made completely irrelevant or redundant?'. If so, this shows that the initial tests were overly coupled to the
 layout and structure of the code. Remember that tests are simply more code that agrees with the initial code you just wrote
 (or if performing TDD, they are simply more code that agrees with the code you are about to write).
+
 In areas of code that are rapidly and constantly changing in structure, higher level tests provide a greater level of
 maintainability and stability, as the higher-level workings of a system are typically more stable.
 These tests are significantly less likely to be made completely redundant.
@@ -72,6 +73,8 @@ This, however, poses an interesting conundrum: how do we know when code
 is likely to change in structure or approach in the future? If we could identify these areas ahead of time, then our
 newfound prescience could simply mean we write them in a better form the first time around. Sadly, however, we are left fumbling in the
 dark: attempts at organising code are a 'best efforts' approach given a current state of knowledge.
+
+![Thinking](/img/remote/thinking.webp)
 
 We do, however,
 get an increased understanding of a system the longer it exists, or the longer we work on it. This allows informed
@@ -90,14 +93,20 @@ relevant for?' or 'are these likely to be irrelevant in X months/years time?'.
 
 On many of the large scale software projects I have worked on, a rather interesting irony has been present: the most
 important, business critical pieces of code are often the most insufficiently tested. Their outputs lack clear
-definition and seemingly any small change could spell disaster. Yet however, they remain this way. Several years ago I
-worked on a NHS project. This was, to massively oversimplify an incredibly complicated and fundamental system, responsible
+definition and seemingly any small change could spell disaster. Yet however, they remain this way.
+
+![Unmoveable rock](/img/remote/immobile.webp)
+
+Several years ago I
+worked on a NHS project. This was, to massively oversimplify, an incredibly complicated and fundamental system responsible
 for associating prices with hospital treatments and generating reports based on these prices. The report system was well
 tested, with thousands of tests meticulously checking every single possible output for a massive variety of inputs. Despite
 all this, the core of the project, the pricing system, was almost entirely lacking in tests. It was only
 truly tested as a side-effect in testing the reports. The code was incredibly had to work with and was not amenable to
 testing, and so it never was. At the time I didn't understand how it could be left that way when it was such a
-fundamental part of the system. I've later realised the rationale is incredibly simple. The original code was written as a proof of
+fundamental part of the system.
+
+I've later realised the rationale is incredibly simple. The original code was written as a proof of
 concept. It worked, and as a result became the production code. Nobody wanted to make any changes for fear of causing an
 unknown regression that could be incredibly difficult and costly to track down and fix. Similarly the process for assigning a
 price was a fixed piece of logic: it didn't change over time, no new requirements changed how it worked, and nobody

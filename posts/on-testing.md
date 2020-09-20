@@ -102,7 +102,7 @@ worked on a NHS project. This was, to massively oversimplify, an incredibly comp
 for associating prices with hospital treatments and generating reports based on these prices. The report system was well
 tested, with thousands of tests meticulously checking every single possible output for a massive variety of inputs. Despite
 all this, the core of the project, the pricing system, was almost entirely lacking in tests. It was only
-truly tested as a side-effect in testing the reports. The code was incredibly had to work with and was not amenable to
+truly tested as a side-effect in testing the reports. The code was incredibly hard to work with and was not amenable to
 testing, and so it never was. At the time I didn't understand how it could be left that way when it was such a
 fundamental part of the system.
 
@@ -116,17 +116,17 @@ testing it.
 
 Am I advocating not testing crucial business systems here? No - not at all! However it's important to recognise that we
 don't live in a perfect world. Systems missing tests for crucial parts exist _everywhere_, and are far more prevalent
-than I'd like to admit. However, this isn't the catastrophe younger me thought it was. If a piece of code is complicated
-, but it works and never changes, then does it matter if it is poorly tested? Adding tests when making changes however,
+than I'd like to admit. However, this isn't the catastrophe younger me thought it was. If a piece of code is complicated,
+but it works and never changes, then does it matter if it is poorly tested? Adding tests when making changes however,
 would still be prudent - but we can still ask the question: 'does the benefit of testing this piece of code outweigh the
-difficulty of adding tests?'. It's a dangerous question to ask, and the answer is almost exclusively 'no - add the
+difficulty of adding tests?'. It's a dangerous question to ask, and the answer is almost exclusively 'yes - add the
 tests'. But just maybe, sometimes, it's a worthy thing to consider.
 
 ## To Conclude
 
-The approach to creating well designed test suites that provide continual value throughout the lifecycle of a project is
+The approach to creating well-designed test suites that provide continual value throughout the lifecycle of a project is
 a difficult task. Advocates of a 'testing pyramid' approach oversimplify the matter. While the intention is good, it
-fails to root itself in the practicality of the ever changing world of software development: the evolution of code over
+fails to root itself in the practicality of the ever-changing world of software development: the evolution of code over
 time can easily render tests redundant or unnecessary, and at times those tests can even be a barrier to refactoring. The
 'obvious' nature clean code can possess also reduces the need for tests as a proof of correct behaviour. Similarly, a
 simple cost-benefit analysis should be considered when regarding existing code that is known to be correct and is unchanging,

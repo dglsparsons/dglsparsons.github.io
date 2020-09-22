@@ -50,7 +50,7 @@ down the file into some clear sections:
 
 This serves a super quick introduction. But lets cover some of the more powerful features.
 
-## Variable expansion
+## Variables
 
 In the previous section, I mention that the GREETING variable could be derived from the output of a command. This is
 sometimes incredibly useful for deriving information that isn't immediately available.

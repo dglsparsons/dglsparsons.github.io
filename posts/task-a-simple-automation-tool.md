@@ -3,7 +3,7 @@ title: Task - A simple tool to automate boring jobs
 description: At Shamaazi we've been using a tool called `task`. It's incredibly powerful and incredibly useful for organising and performing repeated jobs. Let's explore what it's capable of.
 date: 2020-09-24
 layout: layouts/post.njk
-image: /img/remote/thinking.jpg
+image: /img/remote/thinking.webp
 ---
 
 At Shamaazi we've been using a tool called `task`. It's an incredibly powerful tool that has the ability to completely

@@ -1,17 +1,19 @@
 ---
 title: Task - A simple tool to automate boring jobs
 description: At Shamaazi we've been using a tool called `task`. It's incredibly powerful and incredibly useful for organising and performing repeated jobs. Let's explore what it's capable of.
-date: 2020-09-24
+date: 2020-09-25
 layout: layouts/post.njk
 image: /img/remote/thinking.webp
 ---
 
 At Shamaazi we've been using a tool called `task`. It's an incredibly powerful tool that can completely
-replace Makefiles, or complicated scripts, with a much simpler and arguably more powerful alternative. Outside of that,
+replace Makefiles (an old C build system), or complicated scripts, with a much simpler and arguably more powerful alternative. Outside of that,
 it's an incredibly useful organiser for all command-line related activities. At Shamaazi we have a monolithic codebase,
 containing 7 different UIs, hundreds of services and all our infrastructure provisioning. We use `task` to manage all
 of this, as well as performing housekeeping jobs such as deleting user data when requested or changing peoples contact
-addresses. Let's have a quick explore of what `task` is, and what it's capable of.
+addresses. We find it incredibly powerful for this as it's easy to read config, self documenting nature, and ability to
+only run commands that need running all save us tonnes of time waiting for builds, searching for commands, or editing
+config. It's equally valuable on small codebases too. Let's have a quick explore of what `task` is, and what it's capable of.
 
 ## Getting Started
 
@@ -23,7 +25,8 @@ However, there are a tonne of other methods to install it, such as through `brew
 all [here](https://taskfile.dev/#/installation).
 
 Once installed we can run `task --init` in a directory we want to issue commands from. This will create a simple
-`Taskfile.yml` file. This file is used to define all the possible tasks we want to run. Initially, it just contains a
+`Taskfile.yml` file. This file is in yaml format - an incredibly popular human-readable file format. This `Taskfile.yml`
+file is used to define all the possible tasks we want to run. Initially, it just contains a
 `Hello, World!` example.
 ```yaml
 # https://taskfile.dev
@@ -193,10 +196,80 @@ to do. This can be incredibly useful for software development. For example, we c
 `build` task. The `build` task will only build if the code has been updated since the last `build`. We can even make the
 `deploy` only perform an actual deployment if the built files are newer than the last deployment.
 
+## A Real World Example
+
+So far we've looked at a rather contrived example using `curl` to download a weather forecast. Instead, let's look at a
+common code example of building a javascript project. We can define the desired behaviour as follows:
+- running `task build` should run `npm run build`.
+- `npm run build` should only be run if there are any new changes to our source files since the last build.
+- `npm run build` should only be run if the latest `node_modules` are installed.
+- the latest `node_modules` should be installed only if there have been changes to our packages since the last install.
+
+These three conditions can be checked using the magical `test` and `find` tools. Test can be used to check if an output
+of a command returns some content (using `test -z`). It is also capable of checking whether files exist using `test -f`
+, and whether directories exist using `test -d`. If a file/directory doesn't exist, or a command returned some output,
+then the process will exit with a status code, indicating the command failed. Finally, `find` can be used along with the
+`-newer` flag to find files that are newer than our output.
+
+Our Taskfile.yml could look like the following:
+```yaml
+# https://taskfile.dev
+version: '3'
+output: prefixed
+tasks:
+  build:
+    desc: Build all static artifacts into build
+    deps: [ node_modules ]
+    cmds:
+      - npm run build
+    status:
+      # Lets check that our output directory exists
+      - test -d build
+      # And that our index.html file exists
+      - test -f build/index.html
+      # Finally, check if there are any files in `src`, `public` or `node_modules` that are newer than
+      # out build/index.html output.
+      - test -z "$(find src public node_modules -type f -newer build/index.html)"
+  node_modules:
+    desc: Install all dependencies
+    cmds:
+      - npm ci
+    status:
+      # Lets check that node_modules exists
+      - test -d node_modules
+      # Finally, we are up to date if any files in node_modules are newer than package.json
+      - test -n "$(find node_modules/ -type f -newer package.json)"
+```
+
+Finally, lets test this out. The first run of `task build` will do the following:
+```bash
+$ task build
+task: npm ci
+> core-js@2.6.11 postinstall ...
+...
+task: npm run build
+> some_project@1.0.0 build ...
+...
+```
+
+On a second run the following happens though:
+```bash
+$ task build
+task: Task "node_modules" is up to date
+task: Task "build" is up to date
+```
+
+Any changes to `package.json` will result in the dependencies being installed again and then the build being rerun.
+Any change to any `src/` files will result in just the build being rerun. This can save a lot of time as builds are
+run over and over again.
+
 ## Conclusion
 
 Through this short guide, we've built a very clever, but easy to read and follow, set of tasks. These tasks are capable
-of documenting themselves, allowing them to be easily read and understood. Additionally, the `status` and
-`sources` fields can be used to create tasks that only perform actions when they need to. We can also chain these tasks
+of documenting themselves allowing them to be easily read and understood. Additionally, the `status` and
+`sources` fields can be used to create tasks that only perform actions when they need to. We can chain these tasks
 together through the `deps` field. Chaining tasks in this manner can easily optimize a previously difficult task by
-breaking it into component parts, and skipping any parts that do not need to be executed.
+breaking it into component parts, and skipping any parts that do not need to be executed. We've seen this through two
+different examples - a contrived weather downloader and a more typical npm project. Through these examples, we've
+highlighted the power and convenience that `task` can provide. Anyone can easily benefit from using it, and hopefully
+you can see why we love it at Shamaazi.

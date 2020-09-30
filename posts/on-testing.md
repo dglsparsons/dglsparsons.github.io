@@ -1,6 +1,6 @@
 ---
-title: On Testing
-description: A contrary opinion to the silver-bullet attitude of testing
+title: You should only write USEFUL tests
+description: A common mistake is to test every piece of code you write. This can be harmful and unnecessary. Let's explore why.
 date: 2020-09-18
 layout: layouts/post.njk
 image: https://miro.medium.com/max/480/1*6GgUsO9PL5nBpJi6RROcOg.jpeg

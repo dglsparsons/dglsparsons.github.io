@@ -406,7 +406,7 @@ SOFTWARE.
 .hero {
   min-height: 600px;
   width: 100%;
-  background-position: bottom;
+  background-position: top;
   background-size: cover;
   display: flex;
   flex-direction: column;

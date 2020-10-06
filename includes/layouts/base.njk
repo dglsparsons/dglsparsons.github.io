@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="{{ csp.regular | safe }}">
+    <!-- <meta http-equiv="Content-Security-Policy" content="{{ csp.regular | safe }}"> -->
     <link rel="icon" href="{{ '/img/favicon/favicon.ico' | addHash }}">
     <meta name="theme-color" content="#f9c412">
     <title>{{ renderData.title or title or metadata.title | escape }}</title>
@@ -24,8 +24,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@{{ metadata.author.twitterHandle }}">
     <meta name="twitter:creator" content="@{{ metadata.author.twitterHandle }}">
-    {% if image %}
-      <meta property="og:image" content="{{ image | absoluteUrl(metadata.url) }}">
+    {% if cover %}
+      <meta property="og:image" content="{{ cover | absoluteUrl(metadata.url) }}">
     {% endif %}
 
     <link rel="canonical" href="{{ metadata.url }}{{ canonicalUrl or page.url }}">
@@ -60,8 +60,10 @@
         </div>
         <div id="reading-progress" aria-hidden="true"></div>
       </nav>
-      <h1>{{ title }}</h1>
-      {% block extraArticleHeader %}{% endblock %}
+      <div class="hero" style="background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('{{ cover }}')">
+        <h1>{{ title }}</h1>
+        {% block extraArticleHeader %}{% endblock %}
+      </div>
       <dialog id="message"></dialog>
     </header>
 

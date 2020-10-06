@@ -3,7 +3,7 @@ title: A Simple Reference Data Management Trick
 description: I've continually made this same mistake with reference data. It's a mistake that's incredibly common, and easy to avoid. Here's the simple trick I've found.
 date: 2020-09-30
 layout: layouts/post.njk
-image: https://dglsparsons.github.io/img/remote/refdata.jpg
+cover: /img/remote/refdata.jpg
 ---
 
 Nearly all enterprise systems have a concept of reference data. From website
@@ -12,7 +12,7 @@ take many different forms. For years I made the same mistake over and over in ma
 a look at this common reference data pitfall, why it's so easy to fall into, and finally a nice trick to keep
 reference data simple.
 
-# The mistake
+## The mistake
 
 A couple of years ago I worked on a data processing system for an internal product the company I worked for was
 developing. This product, among other things, performed a series of derivations from submitted data. The most notable
@@ -36,7 +36,7 @@ application aware of the user without exposing credentials...
 
 The whole system rapidly becomes very complicated.
 
-# The solution
+## The solution
 
 This overcomplicating is an easy trap to fall into, and especially easy as there doesn't appear to be a simple solution that
 fits our criteria. Where else could we store the reference data if not in a database? A file on
@@ -71,7 +71,7 @@ As a raw file, this seems pretty large - it's around 43M. Compressed, however, i
 Go source code results in a barely noticeable increase in the application size - and this is for a _massive_ reference
 data set. If the reference data set is 500,000 records (still really big), we see around a 3M difference in Go binary size.
 
-# In Conclusion
+## In Conclusion
 
 Reference data can be tricky to manage in a way that's easy to update and easy to manage. I've fallen victim to
 overengineering systems in the past to deal with reference data. Often the simplest solutions are best, and that seems

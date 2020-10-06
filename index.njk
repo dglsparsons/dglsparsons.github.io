@@ -3,20 +3,17 @@ title: Douglas Parsons
 layout: layouts/home.njk
 description: |
     I'm a developer working at Shamaazi on products that help over 100,000 people give to charity. Keep up to date with my thoughts and opinions on my blog!
-image: /img/me-and-cat.jpg
+cover: /img/remote/thinking-1280w.webp
 date: Last Modified
 ---
 
-<p>
-  Hi, I'm a developer looking to get into blogging currently working at Shamaazi. I'm part of a (currently) two-man engineering team
-  responsible for products that help over 100,000 people give to charity! You can keep up to date with my thoughts and
-  opinions on my blog! Opinions are all my own.
-</p>
-
-<img alt="Me and my cat" decoding="async" loading="lazy" src="/img/me-and-cat.jpg" style="background-size: cover; background-image: none;">
-
 <div id="posts">
-  <h2>Posts</h2>
   {% set postslist = collections.posts %}
   {% include "postslist.njk" %}
 </div>
+
+<p>
+  I'm a developer getting into blogging currently working at Shamaazi. I'm part of a two-man engineering team
+  responsible for products that help over 100,000 people give to charity! You can keep up to date with my thoughts and
+  opinions on my blog. Opinions are all my own.
+</p>

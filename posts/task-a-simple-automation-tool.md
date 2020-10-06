@@ -3,7 +3,7 @@ title: Task - An easy to use tool to simplify your build
 description: At Shamaazi we've been using a tool called `task`. It's incredibly powerful and incredibly useful for organising and performing repeated jobs. Let's explore what it's capable of.
 date: 2020-09-25
 layout: layouts/post.njk
-image: /img/remote/thinking.webp
+cover: /img/remote/thinking.webp
 ---
 
 At Shamaazi we've been using a tool called [`task`](https://taskfile.dev). It's an incredibly powerful tool that can completely replace Makefiles (an old C build system), or complicated scripts, with a much simpler and arguably more powerful alternative. Outside of that, it's an incredibly useful organiser for all command-line related activities.
@@ -30,9 +30,9 @@ vars:
   GREETING: Hello, World!
 
 tasks:
-  default
+  default:
     cmds:
-{%raw}      - echo "{{.GREETING}}"{%endraw%}
+{%raw%}      - echo "{{.GREETING}}"{%endraw%}
     silent: true
 ```
 

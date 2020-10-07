@@ -7,8 +7,15 @@ date: Last Modified
 ---
 
 <div id="posts">
-  {% set postslist = collections.posts %}
-  {% include "postslist.njk" %}
+  <ul>
+    {% for post in collections.posts | reverse %}
+    <li>
+      <strong><a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url
+            }}</code>{% endif %}</a></strong>
+      <time  datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 
 <p>

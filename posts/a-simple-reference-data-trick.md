@@ -1,5 +1,5 @@
 ---
-title: A Simple Reference Data Management Trick
+title: A Trick to Help With Reference Data
 description: I've continually made this same mistake with reference data. It's a mistake that's incredibly common, and easy to avoid. Here's the simple trick I've found.
 date: 2020-09-30
 layout: layouts/post.njk

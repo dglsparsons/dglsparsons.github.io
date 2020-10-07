@@ -25,6 +25,7 @@
     <meta name="twitter:site" content="@{{ metadata.author.twitterHandle }}">
     <meta name="twitter:creator" content="@{{ metadata.author.twitterHandle }}">
     {% if cover %}
+      <meta property="twitter:image" content="{{ cover | absoluteUrl(metadata.url) }}">
       <meta property="og:image" content="{{ cover | absoluteUrl(metadata.url) }}">
     {% endif %}
 

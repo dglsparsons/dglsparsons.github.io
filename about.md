@@ -30,7 +30,6 @@ Outside of tech I'm a cat lover, keen skier and a formula 1 fan.
 
 You can follow me on:
 - [Twitter](https://twitter.com/dglsparsons)
-- [Medium](https://medium.com/@dglsparsons)
 - [Dev.to](https://dev.to/dglsparsons)
 - [LinkedIn](https://www.linkedin.com/in/douglas-parsons-b97025103/)
 - [Github](https://github.com/dglsparsons)

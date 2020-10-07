@@ -1,6 +1,6 @@
 ---
 title: Task - An easy to use tool to simplify your build
-description: At Shamaazi we've been using a tool called `task`. It's incredibly powerful and incredibly useful for organising and performing repeated jobs. Let's explore what it's capable of.
+description: At Shamaazi we've been using a tool called task. It's incredibly powerful and incredibly useful for organising and performing repeated jobs. Let's explore what it's capable of.
 date: 2020-09-25
 layout: layouts/post.njk
 cover: /img/remote/thinking.webp

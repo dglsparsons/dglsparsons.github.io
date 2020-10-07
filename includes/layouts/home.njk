@@ -1,5 +1,23 @@
 ---
-layout: layouts/base.njk
 templateClass: tmpl-home
 ---
+{% extends "layouts/base.njk" %}
+
+{% block extraArticleHeader %}
+<aside>
+  I'm part of a two-man software engineering team at Shamaazi.<br/>
+  Building products that help over 100,000 people give to charity.<br/>
+  <div class="icon-row">
+  <a href="https://dev.to/dglsparsons">
+    <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="dev.to profile" height="30" width="30">
+  </a>
+  <a href="http://twitter.com/dglsparsons">
+    <img src="/img/remote/twitter.svg" alt="twitter profile" height="30" width="30">
+  </a>
+  </div>
+</aside>
+{% endblock %}
+
+{% block article %}
 {{ content | safe }}
+{% endblock %}

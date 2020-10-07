@@ -7,19 +7,15 @@ date: Last Modified
 ---
 
 <div id="posts">
-  <ul>
-    {% for post in collections.posts | reverse %}
-    <li>
-      <strong><a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url
-            }}</code>{% endif %}</a></strong>
-      <time  datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-    </li>
-    {% endfor %}
-  </ul>
+  {% for post in collections.posts | reverse %}
+  <h2 style="margin-bottom: 0"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+  <aside>
+    <time  datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+    {% set wc = post.templateContent | striptags | wordcount %}
+    {% set wPerMinute = wc / 240 %}
+    -
+     {{ wPerMinute | round }} min read.
+  </aside>
+  <p>{{ post.data.description }}</p>
+  {% endfor %}
 </div>
-
-<p>
-  I'm a developer getting into blogging currently working at Shamaazi. I'm part of a two-man engineering team
-  responsible for products that help over 100,000 people give to charity! You can keep up to date with my thoughts and
-  opinions on my blog. Opinions are all my own.
-</p>

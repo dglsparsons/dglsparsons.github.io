@@ -16,7 +16,7 @@ I'm responsible for a range of charity products that serve over 100,000 people, 
 - [ZakChat](https://zakchat.com)
 - [My Ten Days](https://mytendays.com)
 
-I've been working in technology and programming since 2013.
+I've been working in technology and programming since 2013, and have a
 BEng in Computer Science from the University of York, UK.
 
 Currently I work every day using:

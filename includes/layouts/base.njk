@@ -12,7 +12,12 @@
     <link rel="icon" href="{{ '/img/favicon/favicon.ico' | addHash }}">
     <meta name="theme-color" content="#f9c412">
     <title>{{ renderData.title or title or metadata.title | escape }}</title>
+    <meta property="og:site_name" content="dgls | dev">
+    <meta property="og:url" content="{{ metadata.url }}">
     <meta property="og:title" content="{{ renderData.title or title or metadata.title | escape  }}">
+    <meta property="og:type" content="website">
+
+    <meta property="twitter:title" content="{{ renderData.title or title or metadata.title | escape  }}">
     {% set desc = renderData.description or description %}
     {% if not desc %}
       {% set desc = content | striptags | truncate(140) %}
@@ -20,6 +25,7 @@
     {% if desc %}
       <meta name="description" content="{{ desc | escape  }}">
       <meta property="og:description" content="{{ desc | escape }}">
+      <meta property="twitter:description" content="{{ desc | escape }}">
     {% endif %}
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@{{ metadata.author.twitterHandle }}">

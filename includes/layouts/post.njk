@@ -20,7 +20,7 @@ templateClass: tmpl-post
 
 <p>
   Thanks for reading. If you enjoyed this article, please <a href="{{ shareUrl | safe }}" on-click="share">share it</a> or
-  <a href="https://twitter.com/{{ metadata.author.twitterHandle }}" target="_blank" rel="noopener">follow me on twitter</a>.
+  <a href="https://twitter.com/intent/follow?screen_name={{ metadata.author.twitterHandle }}" target="_blank" rel="noopener">follow me on twitter</a>.
 </p>
 
 <share-widget>

@@ -1,5 +1,5 @@
 ---
-title: Go's logging libraries are all too complicated. We wrote our own. Here's why.
+title: We wrote our own logger - here's why
 description: At Shamaazi, we found the existing Go libraries for logging overcomplicated and not neatly doing what we wanted. Instead, we wrote our own. Here's why.
 date: 2020-10-08T14:00:00+00:00
 layout: layouts/post.njk
@@ -95,22 +95,39 @@ In antilog we can build up an output by passing the logger around (or attaching 
 
 ## No Log levels
 
-A lack of log-levels seems like an oversight for a logging library. However, I strongly believe they aren't necessary.
-Dave Cheney argues the same on [his blog](https://dave.cheney.net/2015/11/05/lets-talk-about-logging).
-For warning, warning and info/error log levels are impossible to distinguish. Either you can ignore the warning, meaning it is info,
-or you can't ignore it, meaning it is an error. For errors, you either handle the error and continue (in which case it's info), or
-you are passing the error onwards and shouldn't be logging it.
-This removes the need for an error level. All possible log levels are then collapsed into a single level.
-Rather than debating what log-level we should be using, we end in a position of 'things worth logging' and 'things not worth logging'.
-If you log the former, and not the latter, you'll be in a good place.
+A lack of log-levels seems like an oversight for a logging library. However, I strongly believe they aren't necessary
+and just complicate matters. Dave Cheney argues the same on [his blog](https://dave.cheney.net/2015/11/05/lets-talk-about-logging).
+This can be broken down by reasoning about each different log level:
 
-I would extend this argument further though. Log-levels are an attempt to provide a hierarchy of how useful a particular
-message is. This is a flawed approach as the usefulness can't be determined when the message is written. It is impossible
-to know how useful a particular log line will be at a later date, short of being able to predict the future. This is because
-we do not know why our future selves may be looking at our logs. It could be to diagnose a particular race condition, to
-diagnose a bug, or to track user behaviour. Short of knowing what we will be looking for in the future, it is impossible
-to determine what information is going to be relevant. As a result, log-levels are a fruitless task. Rather than debating
-how useful, we should instead focus on what information to log.
+**Warning:**
+
+Warning messages fall into one of two categories:
+- warnings you can ignore
+- warnings you can't ignore
+
+Warnings that you can ignore are interesting. By definition, nothing has gone wrong. As such, they are no different to info level logs.
+Warnings that you can't ignore show the opposite: they are errors that are not logged at the correct level. As it is impossible to
+have a warning that does not fit into these two categories, warning as a log level is useless.
+
+**Error:**
+
+A similar approach removes the need for errors. Errors fall into one of two categories:
+- Errors that you are handling (and recovering from)
+- Errors that you are not handling.
+
+If you are handling the error, then the application will continue as expected, and the log line is only informational. If you are not
+handling the error, then you should not be logging it. It is the responsibility of the calling code to manage this error.
+
+**Info:**
+
+Now there are no more warnings and errors, we have a single log-level: info. By itself, this is no different to not having any log
+levels at all. Instead, we have 'things that we should log' and 'things we shouldn't log'.
+
+This argument to remove log levels can extend further. Log-levels are an attempt to provide a measure of how useful a particular
+message is. This is a flawed approach as the usefulness can't be determined when the message is written. This is because we do not
+know why our future selves may be looking at logs. It could be to diagnose a particular race condition, to diagnose a bug, or to
+track user behaviour. Without knowing why we will be looking at logs, it is impossible to determine what information is going to be
+the most relevant. Any attempt to predict is just noise. As a result, log-levels are a fruitless task.
 
 In the context of antilog, we wanted to avoid the typical `log.Info`, `log.Warn` and `log.Error` interfaces most
 loggers use. This leads to forced decision-making that is not productive. I've been on the end of one-too-many arguments
@@ -125,6 +142,7 @@ falling into one of four traps:
 - forcing the use of log-levels;
 - lacking structured logging;
 - not allowing context to be built
-- allowing too much configuration.
+- and allowing too much configuration.
+
 We sought a solution to these problems by creating our logging library, [antilog](https://github.com/shamaazi/antilog).
 We've been using it for around a year now and love it.

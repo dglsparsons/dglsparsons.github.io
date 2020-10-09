@@ -116,16 +116,17 @@ A similar approach removes the need for errors. Errors fall into one of two cate
 - Errors that you are not handling.
 
 If you are handling the error, then the application will continue as expected, and the log line is only informational. If you are not
-handling the error, then you should not be logging it. It is the responsibility of the calling code to manage this error.
+handling the error, then you should not be logging it. It is the responsibility of the calling code to manage this error. As it is
+impossible to have an error that does not fit into these categories, the error log level is also useless.
 
 **Info:**
 
 Now there are no more warnings and errors, we have a single log-level: info. By itself, this is no different to not having any log
-levels at all. Instead, we have 'things that we should log' and 'things we shouldn't log'.
+levels at all. Instead, we have 'things we should log' and 'things we shouldn't log'.
 
 This argument to remove log levels can extend further. Log-levels are an attempt to provide a measure of how useful a particular
 message is. This is a flawed approach as the usefulness can't be determined when the message is written. This is because we do not
-know why our future selves may be looking at logs. It could be to diagnose a particular race condition, to diagnose a bug, or to
+know why our future selves may be looking at logs. It could be to diagnose a particular race condition, to fix a bug, or to
 track user behaviour. Without knowing why we will be looking at logs, it is impossible to determine what information is going to be
 the most relevant. Any attempt to predict is just noise. As a result, log-levels are a fruitless task.
 

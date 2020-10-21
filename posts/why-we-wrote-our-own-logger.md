@@ -1,5 +1,5 @@
 ---
-title: We wrote our own logger - here's why
+title: We wrote our own Go logger - here's why
 description: At Shamaazi, we found the existing Go libraries for logging overcomplicated and not neatly doing what we wanted. Instead, we wrote our own. Here's why.
 date: 2020-10-09T13:50:00+00:00
 layout: layouts/post.njk
@@ -22,7 +22,7 @@ Here I'll look at the following:
 
 ## Why we care about logging so much
 
-Our largest product is a charity system that automates donations during Ramadan. Over 100,000 people, in around 140
+Our largest product is a charity system that automates donations during Ramadan. Over 160,000 people, in around 140
 different countries, use this product. Despite this, our engineering team is tiny with two engineers working on this
 product. As a result, the ability to quickly and efficiently identify problems in our code through inspecting logs is crucial.
 

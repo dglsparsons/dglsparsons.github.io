@@ -10,7 +10,7 @@ eleventyNavigation:
 
 Hi, I'm a full-stack engineer working at Shamaazi.
 
-I'm responsible for a range of charity products that serve over 100,000 people, such as:
+I'm responsible for a range of charity products that serve over 160,000 people, such as:
 - [My Ten Nights](https://mytennights.com)
 - [Give Match](https://givematch.com)
 - [ZakChat](https://zakchat.com)

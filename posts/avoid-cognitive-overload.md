@@ -10,7 +10,7 @@ Programming can be an arduous activity. You have to remember what you are doing.
 
 All these things you have to remember fight for space inside your brain. You can feel lost, overwhelmed, or feel like your brain has turned to mush. Your brain has too much to remember, and too much to process all at once. As a result, it starts to drop the ball. Making decisions becomes a difficult task as you overthink, over-analyze and over-complicate [everything](https://www.psychologytoday.com/gb/blog/in-practice/201810/seven-thinking-errors-contribute-mental-overload). You forget what you should be doing and forget what you should be doing later. This is COGNITIVE OVERLOAD.
 
-Our brains aren't designed to store and process all this information all the [time](https://www.gamasutra.com/view/feature/190891/programmer_interrupted.php?print=1). Luckily, there are five simple steps you can take to reduce the amount of strain on your brain.
+Our brains aren't designed to store and process all this information all the [time](https://www.gamasutra.com/view/feature/190891/programmer_interrupted.php?print=1). Luckily, there are four simple steps you can take to reduce the amount of strain on your brain.
 
 ## 1. ✍️ Write Everything Down
 
@@ -22,7 +22,7 @@ The most important idea is to realise that our brains are not a good place for s
 
 The best way to do this is by removing anything our brains need to remember.
 
-The solution is super simple: write everything down. We can write down how an application works. We can write down the basic syntax rules for a programming language. We can write down a TODO list of all the things we need to remember.
+The solution is super simple: write everything down. We can write down how an application works. We can write down the basic syntax rules for a programming language. We can write down a to-do list of all the things we need to remember.
 
 Every single piece of information written down is one less thing to think about. One less thing our brains have to keep. This reduces the cognitive load by simply removing information we can keep elsewhere.
 
@@ -79,4 +79,4 @@ The solution is simple though. We need to remove as much of this load as possibl
 
 ---
 
-Do you think there is anything I have missed? Do you use any of these methods? Please comment, or let me know.
+*Do you think there is anything I have missed? Do you use any of these methods? Please comment, or let me know.*

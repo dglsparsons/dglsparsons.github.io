@@ -1,7 +1,7 @@
 ---
 title: Avoid COGNITIVE OVERLOAD when programming in 4 simple ways
 description: Programming can be an arduous activity. You have to remember what you are doing, the context and inner workings of a system, the building blocks of the language you are using. All while coming up with creative solutions to problems. All this can lead to COGNITIVE OVERLOAD. Luckily, there are some simple steps we can take to avoid this.
-date: 2020-10-26
+date: 2020-10-26T09:51:00
 layout: layouts/post.njk
 cover: /img/remote/writing.jpg
 ---

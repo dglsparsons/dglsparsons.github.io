@@ -1,5 +1,5 @@
 ---
-title: Why effective communication is the key skill for being an awesome programmer
+title: Why EFFECTIVE COMMUNICATION is the key skill for being an awesome programmer
 description: Programming is all about communication. And yet, communication is a difficult thing to get right. Here's why it's so important, and how to communicate better.
 date: 2020-11-03T12:20:00
 layout: layouts/post.njk
@@ -39,9 +39,13 @@ Communication is also inherently hard because of how language works. In everyday
 ![Milk](/img/remote/milk.jpg)
 
 > A software engineer gets sent to the shops by his wife.
+
 > She tells him "Go and get a pint of milk, and if they have eggs get six".
+
 > The engineer disappears and returns an hour later with six pints of milk.
+
 > “Why on earth did you get six pints of milk!?” His wife asks, furious.
+
 > He confidently replies "they had eggs!".
 
 

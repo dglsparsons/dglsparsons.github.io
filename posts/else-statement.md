@@ -6,7 +6,7 @@ layout: layouts/post.njk
 cover: /img/remote/thinking.webp
 ---
 
-I've been a professional programmer for the last several years. During this time I've risen rapidly through the ranks. I started as an intern, but I'm now the Lead Engineer responsible for a suite of products that serve over 160,000 people in over 140 different countries across the globe.
+I've been a professional programmer for the last several years. During this time I've risen rapidly through the ranks. I started as an intern, but I'm now the Lead Engineer responsible for a suite of products that serve over 160,000 people in over 140 different countries.
 
 Recently, I took a look back across all the code I've written during these years (that I still have access to). I've written production code in a huge variety of languages, through Haskell, Scala, Go, Python, Java or Javascript. Across all these, I noticed one significant trend: I pretty much never use the ELSE statement.
 

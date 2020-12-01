@@ -1,7 +1,7 @@
 ---
-title: "DON'T WRITE UTILS: how to become an amazing programmer by naming carefully"
+title: "Don't Write Utils: how to become an amazing programmer by naming carefully"
 description: "I hate the word ‘utility’. It says absolutely nothing. And yet, I come across it in so often when programming. It can take different guises too: ‘common’, ‘shared’, ‘lib’, ‘pkg’, ‘tools’, etc. These names can appear both as filenames or as directory names and drive me insane when they do."
-date: 2020-12-01T14:44:00
+date: 2020-12-01T15:05:00
 layout: layouts/post.njk
 cover: /img/remote/tools.jpg
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Testing is important: three ways to easily improve test quality"
 description: It’s no secret that testing is important. We rely on tests to describe intended behaviour, catch any subtle bugs and prevent regressions in our code. But why are tests always such a pain to write well?
-date: 2020-18-10T14:30:00
+date: 2020-12-18T14:30:00
 layout: layouts/post.njk
 cover: /img/remote/dark_code.jpg
 ---

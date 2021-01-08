@@ -33,11 +33,11 @@ Despite being in many ways an obvious improvement over Java, my experience with 
 As Scala derives from Java but mixes in functional paradigms, the language contains a huge amount. While being a strength in some ways, parts of Scala have some bizarre hangovers. We’ve all [mocked JavaScript](https://www.destroyallsoftware.com/talks/wat) for some of its bizarre and unexpected behaviour in code that looks correct. Scala often takes this to another level. It’s easy to slip up when writing code, and unless you know the language incredibly well, need to constantly be on the lookout for [common pitfalls](https://nrinaudo.github.io/scala-best-practices/) (or set up a linter for these).
 
 The second issue I faced with the language was really poor tooling:
-Getting support in vim (my editor of choice) was a nightmare,
-Automatically formatting code was far more difficult than I expected,
-Finding a lightweight logger that didn’t require a thousand line XML file was impossible,
-Setting up linting rules for all the common language quirks was an exercise in finding unmaintained repositories and configuring XML,
-And, finally, once everything finally worked together, I was stuck battling slow compile times and integration tests that were slower than intercontinental drift.
+- Getting support in vim (my editor of choice) was a nightmare,
+- Automatically formatting code was far more difficult than I expected,
+- Finding a lightweight logger that didn’t require a thousand line XML file was impossible,
+- Setting up linting rules for all the common language quirks was an exercise in finding unmaintained repositories and configuring XML,
+- And, finally, once everything finally worked together, I was stuck battling slow compile times and integration tests that were slower than intercontinental drift.
 
 For a popular language, I was really surprised. There were bits I loved, but overall the experience was akin to pulling teeth. Not one I’d go in for again!
 

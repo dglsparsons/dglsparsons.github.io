@@ -18,7 +18,7 @@ Here are the three I found the most painful to use.
 
 Django is a hugely popular framework for developing websites using a model-template-view architectural pattern. It’s amazing for getting something done very quickly. It also comes with a fantastically powerful Object Relational Mapper (ORM). So what’s the problem?
 
-_ Its opinions are too strong!_
+_Its opinions are too strong!_
 
 If you’re working just with a relational database, and only want model-template-view, and you’re completely fine with containerising and managing your own scaling, then it may be completely fine. When I used it we were updating our architecture though. Our entire workload wasn’t suited to a relational database and we wanted to take more benefit from auto-scaling, lambdas and managed services in AWS. We were also looking to use React to build more complete experiences for our UI. This became a real break-away from the Django core use-cases. As time went on, we began fighting Django’s opinions more and more. Every change became a battle, digging through the documentation and hacking in workarounds. Over time the codebase became scrappier and scrappier.
 
